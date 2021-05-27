@@ -21,6 +21,12 @@ hr {
 	margin-bottom: $spacing--shared-v;
 }
 
+#tsparticles{
+	position: fixed;
+	height: 100%;
+    width: 100%;
+}
+
 ul, ol {
 	margin-top: 0;
 	padding-left: $spacing--shared-h;
