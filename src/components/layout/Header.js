@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import Logo from './partials/Logo';
+import FooterSocial from './partials/FooterSocial';
 
 const propTypes = {
   navPosition: PropTypes.string,
@@ -111,6 +112,9 @@ const Header = ({
                       'list-reset text-xs',
                       navPosition && `header-nav-${navPosition}`
                     )}>
+                      <li>
+                      <FooterSocial />
+                      </li>
                     <li>
                       <Link to="#0" onClick={closeMenu}>Documentation</Link>
                     </li>
