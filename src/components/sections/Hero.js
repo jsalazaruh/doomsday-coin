@@ -4,6 +4,8 @@ import { SectionProps } from '../../utils/SectionProps';
 import ButtonGroup from '../elements/ButtonGroup';
 import Button from '../elements/Button';
 import Image from '../elements/Image';
+import Countdown from 'react-countdown';
+
 
 const propTypes = {
   ...SectionProps.types
@@ -13,12 +15,18 @@ const defaultProps = {
   ...SectionProps.defaults
 }
 
+const Completionist = () => <span>BOOOM!</span>;
+
 const Hero = ({
   className,
   topOuterDivider,
   bottomOuterDivider,
   topDivider,
   bottomDivider,
+  invertMobile,
+  invertDesktop,
+  alignTop,
+  imageFill,
   hasBgColor,
   invertColor,
   ...props
@@ -39,41 +47,62 @@ const Hero = ({
     bottomDivider && 'has-bottom-divider'
   );
 
+  const splitClasses = classNames(
+    'split-wrap',
+    invertMobile && 'invert-mobile',
+    invertDesktop && 'invert-desktop',
+    alignTop && 'align-top'
+  );
+
   return (
     <section
       {...props}
       className={outerClasses}
     >
-      <div className="container-sm">
+      <div className="container">
         <div className={innerClasses}>
-          <div className="hero-content">
-            <h1 className="mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200">
-              DoomsDay<br/><span className="text-color-primary">Coin</span>
-            </h1>
-            <div className="container-xs">
+        <div className={splitClasses}>
+        <div className="split-item">
+              <div className="split-item-content center-content-mobile reveal-from-left" data-reveal-container=".split-item">
+              <div className="hero-content">
+            <h2 className="mt-0 mb-16 reveal-from-bottom text-color-primary" data-reveal-delay="200">
+              DoomsDay <span className="text-white-helper">Coin</span>
+            </h2>
+            <div className="container">
+            <Countdown date={Date.now() + 10000000} />
               <p className="m-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
-                Buy now or lose it forever...
+                Doomsday is coming....Stock up!
                 </p>
               <div className="reveal-from-bottom" data-reveal-delay="600">
                 <ButtonGroup>
                   <Button tag="a" color="primary" wideMobile href="https://cruip.com/">
-                    Buy now
+                    Join our Discord!
                     </Button>
                   <Button tag="a" color="dark" wideMobile href="https://github.com/cruip/open-react-template/">
-                    View Story
+                    Buy now
                     </Button>
                 </ButtonGroup>
               </div>
             </div>
           </div>
-          <div className="hero-figure reveal-from-bottom illustration-element-01" data-reveal-value="20px" data-reveal-delay="800">
-          <Image
+              </div>
+
+              <div className={
+                classNames(
+                  'split-item-image center-content-mobile reveal-from-bottom',
+                  imageFill && 'split-item-image-fill'
+                )}
+                data-reveal-container=".split-item">
+                <Image
                 className="has-shadow"
-                src={require('./../../assets/images/MushroomCloudMain.png')}
+                src={require('./../../assets/images/MushroomCloud_Alpha_512.png')}
                 alt="Hero"
                 width={400}
                 height={400} />
-          </div>
+              </div>
+            </div>
+        </div>
+
         </div>
       </div>
     </section>
