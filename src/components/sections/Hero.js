@@ -98,7 +98,7 @@ const Hero = ({
                 src={require('./../../assets/images/MushroomCloud_Alpha_512.png')}
                 alt="Hero"
                 width={400}
-                height={400} />
+                height={400} /> 
               </div>
             </div>
         </div>

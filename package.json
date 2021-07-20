@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "^4.6.0",
     "classnames": "^2.2.6",
     "lodash": "^4.17.15",
     "node-sass": "^4.13.1",
     "particles.js": "^2.0.0",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.6.1",
     "react-countdown": "^2.3.2",
     "react-dom": "^16.13.1",
     "react-ga": "^2.7.0",
